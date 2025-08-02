@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoRadar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.3/dist/full.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+    body {
+        background-color: #f2f2f2;
+        color: #333333;
+        font-family: 'Georgia', serif;
+    }
+
+    /* Header kısmına renk geçişi ekleniyor */
+    header {
+        background: linear-gradient(135deg, #003366, #006400); /* Lacivert'ten Koyu Yeşil'e geçiş */
+        padding: 0.5rem 0; /* Yüksekliği azaltmak için padding'i küçülttük */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 80%; /* Logo boyutunu biraz küçülttük */
+        height: auto;
+    }
+
+    /* Navlink kısmı ve döviz kuru kısmı için düzenleme */
+    .header-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* Solda döviz kuru, sağda navlink'ler */
+        align-items: center; /* Yükseklikleri eşitlemek için */
+        padding: 0 2rem; /* İki taraf arasında biraz boşluk */
+        margin-bottom: 1rem; /* Döviz kuru ve navlink arasına boşluk ekleyelim */
+    }
+
+    .exchange-rates {
+        font-family: 'Arial', sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.75rem; /* Margin küçük tutuldu */
+        font-size: 0.875rem; /* Font boyutu biraz küçültüldü */
+    }
+
+    .exchange-rates div {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        font-family: 'Arial', sans-serif;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 0.25rem 0.75rem; /* Padding küçültüldü */
+        font-size: 0.875rem; /* Font boyutu küçültüldü */
+    }
+
+    .nav-link:hover {
+        color: #006400;
+        text-decoration: underline;
+    }
+
+    .user-icon {
+        width: 25px; /* Kullanıcı ikonu boyutu küçültüldü */
+        height: 25px; /* Kullanıcı ikonu boyutu küçültüldü */
+    }
+
+    /* Mobil uyumlu stiller */
+    @media (max-width: 768px) {
+        .header-top {
+            flex-direction: column; /* Mobilde döviz kuru ve navlink'ler alt alta hizalanır */
+            text-align: center;
+        }
+
+       .exchange-rates {
+    display: flex;
+    flex-direction: row; /* Varsayılan olarak yatay düzen */
+    justify-content: space-around; /* Elemanlar arasındaki boşluğu dengele */
+    align-items: center;
+    background-color: #056330; /* Beyaz arka plan */
+    border-radius: 1rem; /* Köşe yuvarlama */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    padding: 1rem; /* İç boşluk */
+    margin-top: 1.25rem; /* Üstten boşluk */
+    font-size: 1rem; /* Font boyutunu belirledik */
+}
+
+.exchange-rates div {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem; /* İç boşluk */
+    background-color: #f8f9fa; /* Hafif gri arka plan */
+    border-radius: 0.5rem; /* Köşe yuvarlama */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Hafif gölge efekti */
+    font-weight: bold; /* Metin kalınlaştırıldı */
+}
+
+.exchange-rates div strong {
+    display: block; /* Tarih, döviz ve değerleri alt alta sıralayabilmek için */
+    font-size: 1.25rem; /* Yüksek metin boyutu */
+    color: #003366; /* Başlık rengi */
+}
+
+.exchange-rates div span {
+    font-size: 1.125rem; /* Değer boyutu */
+    color: #006400; /* Dolar, Euro vb. renk */
+}
+
+@media (max-width: 768px) {
+    .exchange-rates {
+        flex-direction: column; /* Mobilde dikey düzen */
+    }
+    .exchange-rates div {
+        margin-bottom: 1rem; /* Mobilde alt boşluk ekleyelim */
+    }
+}
+
+        .nav-link {
+            font-size: 0.75rem; /* Mobilde font boyutu küçültüldü */
+        }
+    }
+
+        .heart-icon {
+    font-size: 1.5rem; /* İkonun boyutunu büyütme */
+    color: #003366; /* İkon rengi */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart-icon:hover {
+    color: #006400; /* Hover durumunda renk değişimi */
+    transform: scale(1.1); /* Hover durumunda büyütme efekti */
+}
+.card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.like-form {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.heart-icon.liked {
+    color: red;
+    animation: heart-burst 1s;
+}
+
+@keyframes heart-burst {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Butonlar ve haber kutucukları arasına boşluk ekleme */
+.flex.justify-center.mt-4 {
+    margin-bottom: 1rem; /* Butonlar ile haber kutucukları arasına boşluk ekledik */
+}
+
+/* Görselsiz haberlerin kutucukları arasındaki boşluğu azaltma */
+#news-container .card {
+    margin-bottom: 0.5rem; /* Görselsiz haberlerin kutucukları arasındaki boşluğu azalttık */
+}
+        #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Arka plan rengi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease; /* Geçiş animasyonu */
+    opacity: 1; /* Varsayılan görünürlük */
+  }
+  #preloader img {
+    width: auto;
+    max-width: 50%; /* Gerekirse boyutlandırın */
+    max-height: 50%;
+  }
+    </style>
+</head>
+<body>
+<div id="preloader">
+     <img src="{{ url_for('static', filename='images/technoradar-logo-gif.gif') }}" alt="loading...">
+  </div>
+<script>
+
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+
+    // Preloader'ı 2 saniye sonra gizle
+    setTimeout(() => {
+      preloader.style.opacity = "0"; // Şeffaf yap
+      setTimeout(() => {
+        preloader.style.display = "none"; // Ekrandan kaldır
+      }, 500); // Geçiş animasyonu süresi (0.5 saniye)
+    }, 2000); // 2 saniye
+  });
+
+</script>
+
+    <header>
+        <div class="container mx-auto flex flex-col items-center">
+            <!-- Header-Top Bölümü -->
+            <div class="header-top">
+                <!-- Döviz Kurları -->
+                <div class="exchange-rates" style="color:#056330">
+                    <div><strong>Tarih:</strong> {{ latest_rates[0] }}</div>
+                    <div><strong>Dolar:</strong> {{ latest_rates[1] }}</div>
+                    <div><strong>Euro:</strong> {{ latest_rates[2] }}</div>
+                    <div><strong>Altın:</strong> {{ latest_rates[3] }}</div>
+                </div>
+
+                <!-- Navigasyon Bağlantıları -->
+                <nav class="nav-links">
+                    <a href="/" class="nav-link mr-4">Ana Sayfa</a>
+                    <a href="/dashboard" class="nav-link mr-4">Favoriler</a>
+                    <a href="/logout" class="nav-link mr-4">Çıkış Yap</a>
+                    <a href="/login" class="nav-link">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Giriş Yap" class="user-icon"/>
+                    </a>
+                </nav>
+            </div>
+            <!-- Logo -->
+            <div class="mb-4">
+                <img src="{{ url_for('static', filename='images/technoradar-logo--.png') }}" alt="TechnoRadar Logo" class="logo">
+            </div>
+        </div>
+    </header>
+ <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Görselleri Olan Haberler -->
+            <div class="lg:col-span-2">
+                <div class="flex justify-center mt-4 mb-2">
+                  <button id="scroll-up-with-images" class="btn bg-green-500 text-white hover:bg-green-600">
+                      <i class="fas fa-arrow-up"></i> Yukarıya Çık
+                  </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="news-with-images">
+                    {% for haber_id, baslik, link, gorsel in news_with_images %}
+                    <div class="card">
+                        {% if gorsel %}
+                        <a href="{{ link }}" target="_blank" class="block mb-4">
+                            <img src="{{ gorsel }}" alt="{{ baslik }}" class="w-full h-48 object-cover rounded-md">
+                        </a>
+                        {% endif %}
+                        <h2>{{ baslik }}</h2>
+                        <form action="{{ url_for('toggle_like_news', news_id=haber_id) }}" method="post" class="like-form">
+                            <button type="submit" class="mt-2">
+                                <i class="far fa-heart heart-icon" data-id="{{ haber_id }}"></i>
+                            </button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="flex justify-center mt-4 mb-2">
+                  <button id="scroll-down-with-images" class="btn bg-green-500 text-white hover:bg-green-600">
+                      <i class="fas fa-arrow-down"></i> Devamını Görüntüle
+                  </button>
+                </div>
+            </div>
+
+            <!-- Görselleri Olmayan Haberler -->
+            <div>
+                <div class="flex justify-center mt-4 mb-2">
+                    <button id="scroll-up-no-image" class="btn" style="background-color: green; color: white;">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 gap-4" id="news-container">
+                    {% for haber_id, baslik, link in news_without_images %}
+                    <div class="card">
+                        <h2>{{ baslik }}</h2>
+                        <form action="{{ url_for('toggle_like_news', news_id=haber_id) }}" method="post" class="like-form">
+                            <button type="submit" class="mt-2">
+                                <i class="far fa-heart heart-icon" data-id="{{ haber_id }}"></i>
+                            </button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="flex justify-center mt-4 mb-2">
+                  <button id="scroll-down-no-image" class="btn" style="background-color: green; color: white;">
+                      <i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const likeForms = document.querySelectorAll('.like-form');
+            likeForms.forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const heartIcon = this.querySelector('.heart-icon');
+                    heartIcon.classList.toggle('liked');
+                    if (heartIcon.classList.contains('liked')) {
+                        // Kalp emojileri çıkıp kaybolma animasyonu
+                        const burst = document.createElement('div');
+                        burst.classList.add('heart-burst');
+                        document.body.appendChild(burst);
+                        setTimeout(() => burst.remove(), 1000);
+                    }
+                });
+            });
+
+            let currentIndexWithImages = 0;
+            const newsItemsWithImages = document.querySelectorAll('#news-with-images .card');
+            const scrollDownButtonWithImages = document.getElementById('scroll-down-with-images');
+            const scrollUpButtonWithImages = document.getElementById('scroll-up-with-images');
+
+            function showNewsItemsWithImages() {
+                newsItemsWithImages.forEach((item, index) => {
+                    item.style.display = (index >= currentIndexWithImages && index < currentIndexWithImages + 9) ? 'block' : 'none';
+                });
+            }
+
+            scrollDownButtonWithImages.addEventListener('click', function() {
+                currentIndexWithImages += 3;
+                showNewsItemsWithImages();
+            });
+
+            scrollUpButtonWithImages.addEventListener('click', function() {
+                currentIndexWithImages -= 3;
+                showNewsItemsWithImages();
+            });
+
+            showNewsItemsWithImages();
+
+            let currentIndexNoImage = 0;
+            const newsItemsNoImage = document.querySelectorAll('#news-container .card');
+            const scrollDownButtonNoImage = document.getElementById('scroll-down-no-image');
+            const scrollUpButtonNoImage = document.getElementById('scroll-up-no-image');
+
+            function showNewsItemsNoImage() {
+                newsItemsNoImage.forEach((item, index) => {
+                    item.style.display = (index >= currentIndexNoImage && index < currentIndexNoImage + 6) ? 'block' : 'none';
+                });
+            }
+
+            scrollDownButtonNoImage.addEventListener('click', function() {
+                currentIndexNoImage += 1;
+                showNewsItemsNoImage();
+            });
+
+            scrollUpButtonNoImage.addEventListener('click', function() {
+                currentIndexNoImage -= 1;
+                showNewsItemsNoImage();
+            });
+
+            showNewsItemsNoImage();
+        });
+    </script>
+</body>
+</html>

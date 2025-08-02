@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.3/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dashboard.css"> <!-- External CSS -->
+</head>
+<body>
+    <header>
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="header-title">Dashboard</h1>
+            <nav class="flex items-center">
+                <a href="/" class="nav-link mr-4">Ana Sayfa</a>
+                <a href="/logout" class="nav-link mr-4">Çıkış Yap</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container mx-auto p-4">
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold">{{ username }} Beğendiğiniz Haberler</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for baslik, link, gorsel in liked_news %}
+            <div class="card">
+                {% if gorsel %}
+                <a href="{{ link }}" target="_blank" class="block mb-4">
+                    <img src="{{ gorsel }}" alt="{{ baslik }}" class="w-full h-48 object-cover rounded-md">
+                </a>
+                {% endif %}
+                <h2>{{ baslik }}</h2>
+                <a href="{{ link }}" target="_blank" class="text-blue-600">Haberi Oku</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

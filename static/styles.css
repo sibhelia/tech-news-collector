@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1em;
+    color: #333333;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 0.5em 0 0.2em;
+    color: #333333;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 0.75em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+.alert {
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    color: white;
+}
+
+.alert.success {background-color: #4CAF50;}
+.alert.danger {background-color: #f44336;}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+p {
+    margin-top: 1em;
+}
+
+a {
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: none;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, navy, green);
+    padding: 20px 0;
+}
+
+.header-title {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    height: 50px;
+}
+
+.doviz-verileri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.doviz-item {
+    margin: 5px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    height: 50px;
+}
