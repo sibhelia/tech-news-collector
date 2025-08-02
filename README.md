@@ -1,5 +1,3 @@
-# tech-news-collector
-A Python-based web application that collects and displays technology news from multiple sources.
 # Tech News Collector
 
 A Python-based web application that collects and displays the latest technology news from multiple sources.  
